@@ -1,0 +1,38 @@
+name: red-team-ops-mcp
+description: MCP server for red-team operations. Android APK decompilation, endpoint and API-call extraction, hardcoded-secret scanning, APK metadata. From MEOK AI Labs.
+version: 0.1.0
+license: Apache-2.0
+author: MEOK AI Labs
+homepage: https://github.com/CSOAI-ORG/red-team-ops
+repository: https://github.com/CSOAI-ORG/red-team-ops
+tools:
+- name: decompile_apk
+  description: Decompile an APK into Java source via pyjadx. Returns a list of {class, source} entries, truncated at 80 KB per class.
+  parameters:
+  - name: apk_path
+    type: string
+    required: true
+- name: extract_endpoints
+  description: Pull Retrofit annotations (@GET/@POST/...) and OkHttp .url("...") literals from a decompiled APK, grouped by class.
+  parameters:
+  - name: apk_path
+    type: string
+    required: true
+- name: find_api_calls
+  description: Group HTTP call sites by enclosing class and method, so an attack surface maps onto a UI / Activity flow.
+  parameters:
+  - name: apk_path
+    type: string
+    required: true
+- name: scan_hardcoded_secrets
+  description: Decompile an APK and regex-sweep for AWS access keys, Firebase DB URLs, Firebase API keys, and api_key = "..." literals.
+  parameters:
+  - name: apk_path
+    type: string
+    required: true
+- name: apk_metadata
+  description: Parse APK metadata via androguard: package, version (Name + Code), min/target SDK, declared permissions, activities, services, receivers, providers, debuggable flag.
+  parameters:
+  - name: apk_path
+    type: string
+    required: true

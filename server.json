@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "CSOAI-ORG/red-team-ops-mcp",
+  "version": "0.1.0",
+  "description": "Red Team Ops MCP Server by MEOK AI Labs — mobile (Android) red-team toolkit (APK decompilation, endpoint extraction, secret scanning, APK metadata).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/red-team-ops",
+    "source": "https://github.com/CSOAI-ORG/red-team-ops"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "red-team-ops-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

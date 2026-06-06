@@ -1,39 +1,36 @@
 {
-  "name": "@csgaglobal/red-team-ops",
-  "version": "1.0.0",
-  "description": "AI red team operations toolkit for adversarial testing, vulnerability discovery, and security assessment of AI systems.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "bin": {
-    "red-team-ops-mcp": "dist/index.js"
-  },
-  "files": [
-    "dist",
-    "LICENSE"
-  ],
-  "license": "CC0-1.0",
-  "type": "module",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.1",
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.7.3"
-  },
-  "author": "CSGA Global",
+  "name": "@meok-ai-labs/red-team-ops-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for mobile (Android) red-team operations: APK decompilation, endpoint and API-call extraction, secret scanning, APK metadata.",
+  "license": "Apache-2.0",
+  "author": "MEOK AI Labs",
+  "homepage": "https://github.com/CSOAI-ORG/red-team-ops#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/csga-global/mcp-servers",
-    "directory": "packages/red-team-ops"
+    "url": "git+https://github.com/CSOAI-ORG/red-team-ops.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CSOAI-ORG/red-team-ops/issues"
   },
   "keywords": [
     "mcp",
+    "model-context-protocol",
     "red-team",
     "security",
-    "adversarial",
-    "ai-safety"
+    "android",
+    "apk",
+    "decompilation",
+    "androguard",
+    "meok"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "python": ">=3.10"
+  },
+  "mcp": {
+    "name": "red-team-ops-mcp",
+    "transport": "stdio",
+    "entry": "server:main",
+    "image": "ghcr.io/csoai-org/red-team-ops-mcp:latest",
+    "pypi": "red-team-ops-mcp"
   }
 }

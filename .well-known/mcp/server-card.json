@@ -1,0 +1,27 @@
+{
+  "schema": "https://schema.smithery.ai/server-card.json",
+  "name": "red-team-ops-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for mobile (Android) red-team operations: APK decompilation, endpoint and API-call extraction, secret scanning, APK metadata. Pure-Python (pyjadx + androguard).",
+  "vendor": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/red-team-ops",
+  "license": "Apache-2.0",
+  "categories": ["security", "red-team", "mobile-security"],
+  "tags": ["android", "apk", "decompilation", "androguard", "retrofit", "okhttp", "meok"],
+  "tools": [
+    {"name": "decompile_apk", "description": "Decompile an APK into Java source via pyjadx"},
+    {"name": "extract_endpoints", "description": "Pull Retrofit annotations and OkHttp URL literals from a decompiled APK, grouped by class"},
+    {"name": "find_api_calls", "description": "Group HTTP call sites by enclosing class and method"},
+    {"name": "scan_hardcoded_secrets", "description": "Decompile an APK and regex-sweep for AWS / Firebase / api_key literals"},
+    {"name": "apk_metadata", "description": "Parse APK metadata via androguard (package, version, permissions, exported components)"}
+  ],
+  "transports": ["stdio", "streamable-http"],
+  "deployment": {
+    "image": "ghcr.io/csoai-org/red-team-ops-mcp:latest",
+    "pypi": "red-team-ops-mcp"
+  }
+}
